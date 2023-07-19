@@ -270,6 +270,13 @@ class MainMenuState extends MusicBeatState
 				FlxG.stage.window.textInputEnabled = true;
 				FlxG.stage.window.onTextInput.add(secretCodeFunction);
 			}
+			#else
+			if (FlxG.keys.firstJustPressed() != FlxKey.NONE)
+			{
+				var keyPressed:FlxKey = FlxG.keys.firstJustPressed();
+				var keyName:String = Std.string(keyPressed);
+				secretCodeFunction(keyName);
+			}
 			#end
 
 
