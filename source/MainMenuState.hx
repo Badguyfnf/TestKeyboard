@@ -262,13 +262,17 @@ class MainMenuState extends MusicBeatState
 					});
 				}
 			}
-				#if android
+			function secretCodeFunction(letter:String)
+			
+                        #if android
 			if (FlxG.android.justReleased.BACK)
 			{
 				FlxG.stage.window.textInputEnabled = true;
 				FlxG.stage.window.onTextInput.add(secretCodeFunction);
 			}
 			#end
+
+
 			#if (desktop || android)
 			else if (FlxG.keys.anyJustPressed(debugKeys) #if android || _virtualpad.buttonE.justPressed #end)
 			{
